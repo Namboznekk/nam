@@ -20,6 +20,18 @@ section.content-section{padding:95px 0;border-top:1px solid var(--line)}.section
 @media(max-width:800px){.hero{grid-template-columns:1fr;min-height:auto;gap:34px;padding:58px 0}.poster{height:470px}.section-head{grid-template-columns:1fr;gap:9px}.about-grid,.skill-layout{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.contact-box{grid-template-columns:1fr}.contact-actions{flex-direction:row;flex-wrap:wrap}.navlinks{display:none;position:absolute;top:73px;left:0;right:0;background:var(--paper);padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.navlinks.open{display:flex}.menu{display:block}}
 @media(max-width:520px){.wrap{width:calc(100% - 30px)}h1{font-size:clamp(3.2rem,17vw,5rem)}section.content-section{padding:65px 0}.cards,.goals{grid-template-columns:1fr}.goal{border-right:0;border-bottom:1px solid var(--line)}.goal:last-child{border:0}.poster{height:420px}.poster-title strong{font-size:2.15rem}.skill-row{gap:12px}.skill-row span{max-width:50%}}
 
+/* Strong fallback: paint the colorful nebula directly on the page canvas too */
+html,body{min-height:100%;background-color:#f0eaf7}
+body{
+ background-image:
+ radial-gradient(ellipse at 8% 12%,rgba(255,132,194,.42) 0%,transparent 32%),
+ radial-gradient(ellipse at 90% 10%,rgba(103,149,255,.38) 0%,transparent 33%),
+ radial-gradient(ellipse at 82% 78%,rgba(173,119,255,.30) 0%,transparent 34%),
+ radial-gradient(ellipse at 12% 86%,rgba(255,198,112,.32) 0%,transparent 30%),
+ radial-gradient(ellipse at 48% 46%,rgba(92,211,216,.23) 0%,transparent 39%),
+ linear-gradient(135deg,#f6f0e8 0%,#eee7fa 42%,#e7f2f8 72%,#f8ecdf 100%);
+ background-attachment:fixed;
+}
 /* Colorful starry sky: soft nebula colors, twinkling stars, gentle motion */
 .cosmic-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
  background:
