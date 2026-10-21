@@ -174,6 +174,56 @@ header{background:rgba(242,238,229,.88)}
 #library .interest-photo{height:190px}
 @media(max-width:560px){.library-categories{grid-template-columns:1fr}#library .interest-photo{height:175px}}
 
+
+/* Thư viện sách: rực rỡ hơn, nhưng vẫn giữ chất điện ảnh cổ điển */
+#library{position:relative;isolation:isolate}
+#library:before{content:"";position:absolute;z-index:-1;inset:0;background:
+ radial-gradient(ellipse at 8% 18%,rgba(255,181,209,.42),transparent 32%),
+ radial-gradient(ellipse at 92% 16%,rgba(160,185,255,.42),transparent 31%),
+ radial-gradient(ellipse at 76% 88%,rgba(201,167,255,.30),transparent 32%),
+ radial-gradient(ellipse at 18% 92%,rgba(255,211,137,.32),transparent 28%)}
+#library .section-no{color:#9b6b25}
+#library .section-head h2{color:#292239}
+#library .section-head p{color:#655b70}
+#library .library-categories{gap:18px}
+#library .library-categories .interest{
+ min-height:300px;padding:18px;border-radius:15px;overflow:hidden;
+ background:linear-gradient(155deg,#fffdfb 0%,#fff8f1 52%,#f6efff 100%);
+ border:1px solid #d8c5e7;box-shadow:0 10px 28px rgba(78,55,111,.09);
+ transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease
+}
+#library .library-categories .interest:nth-child(1){background:linear-gradient(150deg,#fffaf1,#ffe8dc 58%,#fff8f4);border-color:#e8bfa4}
+#library .library-categories .interest:nth-child(2){background:linear-gradient(150deg,#fff8fb,#f7e5f2 55%,#fff9f5);border-color:#d9afd2}
+#library .library-categories .interest:nth-child(3){background:linear-gradient(150deg,#f7fbff,#e5edff 58%,#fff8e9);border-color:#b9c8ee}
+#library .library-categories .interest:nth-child(4){background:linear-gradient(150deg,#fffaf1,#fce9d4 55%,#fff4f8);border-color:#e5c49c}
+#library .library-categories .interest:hover,#library .library-categories .interest:focus-visible{
+ transform:translateY(-7px);box-shadow:0 20px 38px rgba(69,48,95,.16);border-color:#b58a4b
+}
+#library .library-categories .interest-photo{height:172px;margin:-18px -18px 16px;border-radius:14px 14px 0 0;background:#e9dff3}
+#library .library-categories .interest-photo img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s;filter:saturate(1.12) contrast(1.02)}
+#library .library-categories .interest:hover .interest-photo img{transform:scale(1.07);filter:saturate(1.22) contrast(1.04)}
+#library .library-categories .interest-photo:after{background:linear-gradient(0deg,rgba(35,26,48,.28),transparent 72%)}
+#library .library-categories .idx{color:#98672b;font-weight:800;letter-spacing:.18em}
+#library .library-categories .symbol{color:#9b6b9c;font-size:2rem}
+#library .library-categories .interest h3{color:#30243c;font-size:1.27rem;margin:9px 0 6px}
+#library .library-categories .interest p{color:#685b70;font-size:.8rem}
+#library .library-categories .open-hint{border-top:1px solid rgba(160,126,171,.32);color:#875e9b;font-weight:800;letter-spacing:.08em}
+#library .library-categories .interest:nth-child(1) .open-hint{color:#a15c38}
+#library .library-categories .interest:nth-child(3) .open-hint{color:#4f68a7}
+.choice-dialog{border-radius:18px;background:linear-gradient(145deg,#fffdf9,#f7f0ff);border-color:#d9c2e9}
+.choice-kicker{color:#9564a7}
+.choice-btn{border-radius:10px;background:linear-gradient(120deg,#fffdf9,#f7f1ff);border-color:#dfcde9}
+.choice-btn:hover,.choice-btn:focus-visible{background:#fff;border-color:#bd8dc9;box-shadow:0 8px 20px #73518b18}
+.choice-btn img{border-radius:6px}
+.detail-dialog{border-radius:18px;overflow:auto;background:linear-gradient(145deg,#fffdf8,#f7f0ff);border-color:#c5a0d6}
+.detail-kicker{color:#fff1c9}
+@media(max-width:520px){
+ #library .library-categories{gap:12px}
+ #library .library-categories .interest{min-height:250px;padding:13px;border-radius:12px}
+ #library .library-categories .interest-photo{height:135px;margin:-13px -13px 13px;border-radius:11px 11px 0 0}
+ #library .library-categories .interest h3{font-size:1.08rem}
+}
+
 </style></head>
 <body><div class="cosmic-bg" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <header><nav class="wrap"><a class="brand" href="#home">NGUYỄN THANH NAM<span> /</span></a><div class="navlinks" id="navlinks"><a href="#about">Về mình</a><a href="#interests">Sở thích</a><a href="#library">Thư viện sách</a><a href="#skills">Năng khiếu</a><a href="#goals">Mục tiêu</a><a href="#contact">Kết nối</a></div><button class="menu" id="menu" aria-expanded="false">☰ Menu</button></nav></header>
@@ -281,7 +331,7 @@ const choiceGroups={
   3:{title:'Kệ Nguyễn Nhật Ánh',kicker:'THƯ VIỆN SÁCH CỦA NAM · VĂN HỌC VIỆT',description:'Chọn một cuốn sách để xem đúng bìa sách và phần giới thiệu.',items:[15,16,17]},
   4:{title:'Kệ Emma Hạ My',kicker:'THƯ VIỆN SÁCH CỦA NAM · KINH DỊ',description:'Nhấn vào từng bìa sách để xem nội dung và chủ đề.',items:[28,29]},
   5:{title:'Kệ Harry Potter',kicker:'THƯ VIỆN SÁCH CỦA NAM · THẾ GIỚI PHÉP THUẬT',description:'Chọn một trong bảy tập truyện Harry Potter để mở thông tin chi tiết.',items:[21,22,23,24,25,26,27]},
-  6:{title:'Kệ kinh dị cổ điển',kicker:'THƯ VIỆN SÁCH CỦA NAM · GOTHIC & BÍ ẨN',description:'Khám phá các tác phẩm kinh dị kinh điển.',items:[28,29,19,20]}
+  6:{title:'Kệ Emma Hạ My',kicker:'THƯ VIỆN SÁCH CỦA NAM · EMMA HẠ MY',description:'Hai cuốn truyện của Emma Hạ My trong bộ sưu tập của Nam. Chọn một bìa để đọc phần giới thiệu.',items:[28,29]}
 };
 function openChoices(groupIndex,card){const group=choiceGroups[groupIndex];if(!group)return;lastCard=card;document.getElementById('choiceTitle').textContent=group.title;document.getElementById('choiceKicker').textContent=group.kicker;document.getElementById('choiceDescription').textContent=group.description;choiceList.replaceChildren();group.items.forEach(index=>{const d=detailData[index];if(!d)return;const button=document.createElement('button');button.type='button';button.className='choice-btn';const img=document.createElement('img');img.src=d.img;img.alt=d.alt;img.loading='lazy';img.onerror=()=>{img.onerror=null;img.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=300&q=80'};const copy=document.createElement('span');const title=document.createElement('strong');title.textContent=d.title;const subtitle=document.createElement('small');subtitle.textContent=d.kicker;copy.append(title,subtitle);const arrow=document.createElement('b');arrow.className='choice-arrow';arrow.textContent='↗';button.append(img,copy,arrow);button.addEventListener('click',()=>{choiceModal.classList.remove('open');choiceModal.setAttribute('aria-hidden','true');openDetail(index,card)});choiceList.appendChild(button)});choiceModal.classList.add('open');choiceModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';choiceClose.focus()}
 function closeChoices(){choiceModal.classList.remove('open');choiceModal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastCard)lastCard.focus()}
