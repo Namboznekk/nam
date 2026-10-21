@@ -20,6 +20,39 @@ section.content-section{padding:95px 0;border-top:1px solid var(--line)}.section
 @media(max-width:800px){.hero{grid-template-columns:1fr;min-height:auto;gap:34px;padding:58px 0}.poster{height:470px}.section-head{grid-template-columns:1fr;gap:9px}.about-grid,.skill-layout{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.contact-box{grid-template-columns:1fr}.contact-actions{flex-direction:row;flex-wrap:wrap}.navlinks{display:none;position:absolute;top:73px;left:0;right:0;background:var(--paper);padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.navlinks.open{display:flex}.menu{display:block}}
 @media(max-width:520px){.wrap{width:calc(100% - 30px)}h1{font-size:clamp(3.2rem,17vw,5rem)}section.content-section{padding:65px 0}.cards,.goals{grid-template-columns:1fr}.goal{border-right:0;border-bottom:1px solid var(--line)}.goal:last-child{border:0}.poster{height:420px}.poster-title strong{font-size:2.15rem}.skill-row{gap:12px}.skill-row span{max-width:50%}}
 
+/* Colorful starry sky: soft nebula colors, twinkling stars, gentle motion */
+.cosmic-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+ background:
+ radial-gradient(ellipse at 12% 18%,rgba(255,153,199,.42),transparent 31%),
+ radial-gradient(ellipse at 83% 16%,rgba(126,161,255,.40),transparent 32%),
+ radial-gradient(ellipse at 78% 72%,rgba(177,139,255,.34),transparent 34%),
+ radial-gradient(ellipse at 18% 83%,rgba(255,205,124,.34),transparent 30%),
+ radial-gradient(ellipse at 48% 48%,rgba(122,218,222,.23),transparent 37%),
+ linear-gradient(135deg,#f6f0e7 0%,#f1eafa 42%,#e9f3f7 72%,#f8eee3 100%);
+}
+.cosmic-bg:before{content:"";position:absolute;inset:-20%;opacity:.7;
+ background-image:
+ radial-gradient(2px 2px at 7% 12%,#fff 55%,transparent 100%),
+ radial-gradient(1.5px 1.5px at 18% 37%,#b99cff 55%,transparent 100%),
+ radial-gradient(2px 2px at 31% 18%,#fff 55%,transparent 100%),
+ radial-gradient(1.5px 1.5px at 43% 62%,#e5a5cf 55%,transparent 100%),
+ radial-gradient(2px 2px at 58% 24%,#fff 55%,transparent 100%),
+ radial-gradient(1.5px 1.5px at 71% 49%,#86a8ff 55%,transparent 100%),
+ radial-gradient(2px 2px at 84% 31%,#fff 55%,transparent 100%),
+ radial-gradient(1.5px 1.5px at 92% 76%,#d5a6ff 55%,transparent 100%),
+ radial-gradient(2px 2px at 24% 82%,#fff 55%,transparent 100%),
+ radial-gradient(1.5px 1.5px at 63% 88%,#e4b36f 55%,transparent 100%);
+ background-size:310px 260px;animation:starDrift 48s linear infinite;
+}
+.cosmic-bg:after{content:"";position:absolute;inset:-30%;opacity:.45;filter:blur(30px);
+ background:conic-gradient(from 35deg at 50% 50%,transparent 0deg,rgba(255,161,204,.25) 55deg,transparent 100deg,rgba(111,164,255,.25) 165deg,transparent 220deg,rgba(237,190,115,.2) 280deg,transparent 360deg);
+ animation:nebulaTurn 75s linear infinite;
+}
+header,main,footer{position:relative;z-index:1}
+header{background:rgba(242,238,229,.88)}
+@keyframes starDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-70px,45px,0)}}
+@keyframes nebulaTurn{from{transform:rotate(0deg) scale(1)}to{transform:rotate(360deg) scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.cosmic-bg:before,.cosmic-bg:after{animation:none}}
 /* Interactive image cards + click-to-open details */
 .interest{cursor:pointer;position:relative;overflow:hidden;outline-offset:4px}
 .interest:focus-visible{outline:2px solid var(--gold)}
@@ -61,7 +94,7 @@ section.content-section{padding:95px 0;border-top:1px solid var(--line)}.section
 @media(max-width:420px){.anime-gallery{gap:10px}.anime-poster{min-height:220px}.anime-poster-caption{padding:12px}.anime-poster-caption strong{font-size:1rem}}
 @media(prefers-reduced-motion:reduce){.anime-poster img{transition:none}}
 </style></head>
-<body><div class="grain" aria-hidden="true"></div>
+<body><div class="cosmic-bg" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <header><nav class="wrap"><a class="brand" href="#home">NGUYỄN THANH NAM<span> /</span></a><div class="navlinks" id="navlinks"><a href="#about">Về mình</a><a href="#interests">Sở thích</a><a href="#skills">Năng khiếu</a><a href="#goals">Mục tiêu</a><a href="#contact">Kết nối</a></div><button class="menu" id="menu" aria-expanded="false">☰ Menu</button></nav></header>
 <main>
 <section class="hero wrap" id="home"><div><div class="eyebrow">Một chút về tôi</div><h1>Nguyễn<br><em>Thanh Nam.</em></h1><p class="lead">Một người thích thử thách trí óc bằng Rubik, đắm mình trong những câu chuyện anime và tìm thấy cảm xúc qua những bộ phim tình cảm.</p><div class="actions"><a class="btn dark" href="#about">Khám phá câu chuyện ↘</a><a class="btn" href="#interests">Những điều mình thích</a></div><div class="hero-foot">Hồ sơ cá nhân · Lưu giữ những điều làm nên tôi</div></div><div class="poster" role="img" aria-label="Minh họa kiến trúc cổ điển dưới ánh nắng vàng"><div class="sun"></div><div class="building"></div><div class="poster-label">PERSONAL JOURNAL · EST. 2011</div><div class="poster-side">A STUDY IN CURIOSITY</div><div class="poster-title"><small>Góc nhỏ của</small><strong>Thanh Nam</strong><i></i><p>Curiosity · Stories · Persistence</p></div></div></section>
